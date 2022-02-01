@@ -1,7 +1,8 @@
 import React from 'react';
-import {Header, Categories,  } from "./componnents";
+import {Header, Categories, SortPopup } from "./componnents";
 
 const arrTypes = ['Мясна','Вегетеріанська','Гостра','Закрита']
+const arrTypesSort = ['Ціні', 'Алфавіту', 'Популярності']
 
 function App() {
     return (
@@ -11,6 +12,7 @@ function App() {
                 <div className="container">
                     <div className="content__top">
                         <Categories onClickItem={(element) => console.log(element)} types={arrTypes}/>
+                        <SortPopup itemsSort={arrTypesSort}/>
                     </div>
                     <h2 className="content__title">Все пиццы</h2>
                     <div className="content__items">
