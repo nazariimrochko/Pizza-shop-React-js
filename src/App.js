@@ -1,17 +1,18 @@
 import React, {useEffect, useState} from 'react';
 import {Header,} from "./componnents";
-import {MainContent,Cart} from "./pages";
-import {Routes,Route,} from "react-router-dom";
+import {MainContent, Cart} from "./pages";
+import {Routes, Route,} from "react-router-dom";
+import axios from "axios";
 
 function App() {
     const [dataPizzas, setDataPizzas] = useState([])
 
     useEffect(() => {
-    fetch('http://localhost:3000/db.json')
-        .then((response) => response.json())
-        .then(json =>{setDataPizzas(json.pizzas)
-    })
-    },[])
+        axios.get('http://localhost:3000/db.json')
+            .then(({data}) => {
+                setDataPizzas(data.pizzas)
+            });
+    }, [])
 
 
     return (
@@ -19,8 +20,8 @@ function App() {
             <Header/>
             <div className="content">
                 <Routes>
-                    <Route path="/"  element={ <MainContent itemPizza={dataPizzas}/>}  />
-                    <Route path="/cart" element={<Cart/>}  />
+                    <Route path="/" element={<MainContent itemPizza={dataPizzas}/>}/>
+                    <Route path="/cart" element={<Cart/>}/>
                 </Routes>
             </div>
         </div>
