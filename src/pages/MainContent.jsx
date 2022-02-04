@@ -2,7 +2,9 @@ import React from 'react';
 import {Categories, PizzaBlock, SortPopup} from "../componnents";
 
 const arrTypes = ['Мясна', 'Вегетеріанська', 'Гостра', 'Закрита']
-const arrTypesSort = ['Ціні', 'Алфавіту', 'Популярності']
+const arrTypesSort = [{type: 'price', name: 'Ціні'},
+    {type: 'alphabet', name: 'Алфавіту'},
+    {type: 'popular', name: 'Популярності'},]
 
 const MainContent = ({itemPizza}) => {
 
@@ -15,7 +17,7 @@ const MainContent = ({itemPizza}) => {
             </div>
             <h2 className="content__title">Все пиццы</h2>
             <div className="content__items">
-                {itemPizza.map((obj) => <PizzaBlock {...obj}  key={obj.id}/>)}
+                {itemPizza.map((obj) => <PizzaBlock {...obj} key={obj.id}/>)}
             </div>
         </div>
     );

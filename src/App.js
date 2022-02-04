@@ -9,8 +9,8 @@ function App() {
 
     useEffect(() => {
         axios.get('http://localhost:3000/db.json')
-            .then(({data}) => {
-                setDataPizzas(data.pizzas)
+            .then(({data: {pizzas}}) => {
+                setDataPizzas(pizzas)
             });
     }, [])
 
