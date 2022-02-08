@@ -1,8 +1,15 @@
 import React, {useState} from 'react';
 
-const Categories = ({types, onClickItem}) => {
+const categoriesName = ['Мясна', 'Вегетеріанська','Гриль', 'Гостра', 'Закрита']
+
+const Categories = React.memo(({onClickItem}) => {
     const [activeEl, setActiveEl] = useState(null)
 
+    const onSelectItem = (index) => {
+        setActiveEl(index)
+        onClickItem(index)
+    }
+    console.log('Render Categories-component ')
 
     return (
         <div className="categories">
@@ -11,15 +18,15 @@ const Categories = ({types, onClickItem}) => {
                     className={null === activeEl ? 'active' : ''}
                 >Всі
                 </li>
-                {types.map((element, index) => {
+                {categoriesName.map((element, index) => {
                     return <li key={`${element}_${index}`}
-                               onClick={() => setActiveEl(index)}
+                               onClick={() => onSelectItem(index)}
                                className={index === activeEl ? 'active' : ''}
                     > {element}</li>
                 })}
             </ul>
         </div>
     );
-};
+})
 
 export default Categories;
