@@ -14,8 +14,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Additionally for stylization:
 
-###`npm install class names`
-###`npm add scss`
+### `npm install class names`
+### `npm add scss`
 
 ## Install the JSON server:
 
@@ -24,8 +24,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Auxiliary Libraries:
 
-### `npm install redux-thunk` - (for working with actions and asynchronous actions)
-### `npm add prop-types` - (a separate library responds to reproduce the correct receipt of data in which formats they come)
+### `npm install redux-thunk` 
+(for working with actions and asynchronous actions)
+### `npm add prop-types` 
+(a separate library responds to reproduce the correct receipt of data in which formats they come)
 
 ## Available Scripts
 
