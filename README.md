@@ -2,30 +2,30 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Project settings:
+# Project settings:
 
-##Globally:
+## Globally:
 
-###`npm install eslint-plugin-react-hooks --save-dev`
-###`npm add react-router-dom`
-###`npm install redux`
-###`npm install react-redux`
-###`npm add axios`
+### `npm install eslint-plugin-react-hooks --save-dev`
+### `npm add react-router-dom`
+### `npm install redux`
+### `npm install react-redux`
+### `npm add axios`
 
-##Additionally for stylization:
+## Additionally for stylization:
 
 ###`npm install class names`
 ###`npm add scss`
 
-##Install the JSON server:
+## Install the JSON server:
 
-###`npm add --dev json-server`
-###`json server - see db.json`
+### `npm add --dev json-server`
+### `json server - see db.json`
 
-##Auxiliary Libraries:
+## Auxiliary Libraries:
 
-###`npm install redux-thunk` - (for working with actions and asynchronous actions)
-###`npm add prop-types` - (a separate library responds to reproduce the correct receipt of data in which formats they come)
+### `npm install redux-thunk` - (for working with actions and asynchronous actions)
+### `npm add prop-types` - (a separate library responds to reproduce the correct receipt of data in which formats they come)
 
 ## Available Scripts
 
