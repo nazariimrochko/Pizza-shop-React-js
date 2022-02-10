@@ -2,8 +2,10 @@ import React from 'react';
 import logoSvg from "../assets/img/pizza-logo.svg";
 import ButtonBasket from "./ButtonBasket";
 import {Link} from "react-router-dom";
+import {useSelector} from "react-redux";
 
 const Header = () => {
+
     return (
         <div className="header">
             <div className="container">
@@ -18,7 +20,7 @@ const Header = () => {
                 </Link>
                 <div className="header__cart">
                     <Link to={'/cart'}>
-                        <ButtonBasket className="button--cart" />
+                        <ButtonBasket  className="button--cart" />
                     </Link>
                 </div>
             </div>

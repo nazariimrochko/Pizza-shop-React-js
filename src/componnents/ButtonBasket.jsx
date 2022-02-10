@@ -1,12 +1,21 @@
 import React from 'react';
 import classNames from "classnames";
+import {useSelector} from "react-redux";
 
 const ButtonBasket = ({onClick, className, outline, children}) => {
+
+    const {totalPrice, totalCount} = useSelector(({basket}) => ({
+        totalPrice: basket.totalPrice,
+        totalCount: basket.totalCount,
+    }))
+
+
     return (
+
         <div onClick={onClick}
              className={classNames('button', className, {'button--outline': outline,
             })}>
-            <span>520 $</span>
+            <span>{totalPrice}</span>
             <div className="button__delimiter"></div>
             <svg
                 width="18"
@@ -37,6 +46,7 @@ const ButtonBasket = ({onClick, className, outline, children}) => {
                     strokeLinejoin="round"
                 />
             </svg>
+            <span>{totalCount}</span>
         </div>
     );
 };
