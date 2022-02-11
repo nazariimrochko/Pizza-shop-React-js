@@ -67,11 +67,14 @@ const basket = (state = initialState, action) => {
                 totalCount: 0,
             }
         case 'PLUS_BASKET_ITEM': {
-            const newObjItems = [...state.items[action.payload].items, state.items[action.payload].items[0]]
+            const newObjItems = [
+                ...state.items[action.payload].items,
+                state.items[action.payload].items[0],
+            ];
 
             const newItems = {
                 ...state.items,
-                [action.payload.id]: {
+                [action.payload]: {
                     items: newObjItems,
                     totalPrice: getTotalPrice(newObjItems),
                 },
@@ -99,7 +102,7 @@ const basket = (state = initialState, action) => {
 
             const newItems = {
                     ...state.items,
-                    [action.payload.id]: {
+                    [action.payload]: {
                         items: newObjectItems,
                         totalPrice: getTotalPrice(newObjectItems),
                     },

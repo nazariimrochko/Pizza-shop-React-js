@@ -77,12 +77,13 @@ const Basket = () => {
                             </div>
                         </div>
                         <div className="content__items">
-                            {addedPizzas.map((obj) => (
-                                <BasketItem key={obj.id}
+                            {addedPizzas.map((obj, index) => (
+                                <BasketItem key={obj[index]}
                                             id={obj.id}
                                             name={obj.name}
                                             type={obj.type}
                                             size={obj.size}
+                                            imgPizza={obj.imageUrl}
                                             totalPrice={items[obj.id].totalPrice}
                                             totalCount={items[obj.id].items.length}
                                             onRemove={onRemoveItem}

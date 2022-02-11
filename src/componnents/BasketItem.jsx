@@ -1,6 +1,6 @@
 import React from 'react';
 
-const BasketItem = ({id, name,type,size,totalPrice, totalCount,onRemove,onMinus, onPlus}) => {
+const BasketItem = ({id, name,type,size, imgPizza, totalPrice, totalCount,onRemove,onMinus, onPlus}) => {
 
     const handleRemoveClick = () => {
         onRemove(id)
@@ -17,9 +17,7 @@ const BasketItem = ({id, name,type,size,totalPrice, totalCount,onRemove,onMinus,
             <div className="cart__item-img">
                 <img
                     className="pizza-block__image"
-                    src="https://dodopizza-a.akamaihd.net/static/Img/Products/Pizza/ru-RU/b750f576-4a83-48e6-a283-5a8efb68c35d.jpg"
-                    alt="Pizza"
-                />
+                    src={imgPizza} alt="Pizza"/>
             </div>
             <div className="cart__item-info">
                 <h3>{name}</h3>
