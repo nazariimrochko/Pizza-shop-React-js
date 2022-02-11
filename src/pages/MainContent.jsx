@@ -47,7 +47,7 @@ const MainContent = () => {
                     ? items.map((obj) =>
                         <PizzaBlock onClickAddPizza={addPizzaToBasket} {...obj}
                                     isLoading={true}
-                                    amountAded={basketItem[obj.id] && basketItem[obj.id].length}
+                                    amountAded={basketItem[obj.id] && basketItem[obj.id].items.length}
                                     key={obj.id}/>)
                     : Array(10).fill(0)
                         .map((item, index) => <PizzaLoaderBlock key={index}/>)
