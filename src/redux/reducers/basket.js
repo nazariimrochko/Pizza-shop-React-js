@@ -25,13 +25,14 @@ const getTotalSum = (obj, path) => {
 const basket = (state = initialState, action) => {
     switch (action.type) {
         case 'ADD_PIZZA_BASKET': {
-            const currentPizzaItems = !state.items[action.payload.id]
+            const uniqueId = `${action.payload.id}-${action.payload.type}-${action.payload.size}`
+            const currentPizzaItems = !state.items[uniqueId]
                 ? [action.payload]
-                : [...state.items[action.payload.id].items, action.payload,]
+                : [...state.items[uniqueId].items, action.payload,]
 
             const newItems = {
                 ...state.items,
-                [action.payload.id]: {
+                [uniqueId]: {
                     items: currentPizzaItems,
                     totalPrice: getTotalPrice(currentPizzaItems),
                 },
@@ -80,7 +81,6 @@ const basket = (state = initialState, action) => {
                 },
             };
 
-
             const totalCount = getTotalSum(newItems, 'items.length')
             const totalPrice = getTotalSum(newItems, 'totalPrice')
 
@@ -93,7 +93,6 @@ const basket = (state = initialState, action) => {
             }
 
         }
-
         case 'MINUS_BASKET_ITEM':{
             const oldItems = state.items[action.payload].items;
             const newObjectItems = oldItems.length > 1

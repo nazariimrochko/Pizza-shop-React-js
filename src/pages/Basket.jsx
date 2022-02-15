@@ -10,11 +10,9 @@ const Basket = () => {
     const dispatch = useDispatch()
 
     const {totalPrice, totalCount, items} = useSelector(({basket}) => basket)
-
     const addedPizzas = Object.keys(items).map(key => {
         return items[key].items[0];
     })
-
     const onClearBasket = () => {
         if (window.confirm('Ви впевнені, що хочите очистити кошик ?')) {
             dispatch(clearBasket())
@@ -26,6 +24,7 @@ const Basket = () => {
         }
     }
     const onPlusItem = (id) => {
+        console.log(id)
         dispatch(plusBasketItem(id))
     }
 
@@ -40,8 +39,8 @@ const Basket = () => {
         <div className="content">
             <div className="container container--cart">
                 {totalCount
-                    ? <div className="cart">
-                        <div className="cart__top">
+                    ? <div className="cart" >
+                        <div className="cart__top" >
                             <h2 className="content__title">
                                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                                      xmlns="http://www.w3.org/2000/svg">
@@ -78,14 +77,14 @@ const Basket = () => {
                         </div>
                         <div className="content__items">
                             {addedPizzas.map((obj, index) => (
-                                <BasketItem key={obj[index]}
-                                            id={obj.id}
+                                <BasketItem key={`${obj.id}-${obj.type}-${obj.size}`}
+                                            id={`${obj.id}-${obj.type}-${obj.size}`}
                                             name={obj.name}
                                             type={obj.type}
                                             size={obj.size}
                                             imgPizza={obj.imageUrl}
-                                            totalPrice={items[obj.id].totalPrice}
-                                            totalCount={items[obj.id].items.length}
+                                            totalPrice={items[`${obj.id}-${obj.type}-${obj.size}`].totalPrice}
+                                            totalCount={items[`${obj.id}-${obj.type}-${obj.size}`].items.length}
                                             onRemove={onRemoveItem}
                                             onPlus={onPlusItem}
                                             onMinus={onMinusItem}
