@@ -20,6 +20,8 @@
     "react-scripts": "5.0.0",
     "redux": "^4.1.2",
     "redux-thunk": "^2.4.1",
+    "sass": "^1.49.7",
+    "scss": "^0.2.4",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -35,7 +37,7 @@
       "react-app/jest"
     ]
   },
-  "proxy":"http://localhost:3003",
+  "proxy": "http://localhost:3003",
   "browserslist": {
     "production": [
       ">0.2%",
@@ -50,5 +52,17 @@
   },
   "devDependencies": {
     "eslint-plugin-react-hooks": "^4.3.0"
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nazariimrochko/Pizza-Shop-React.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nazariimrochko/Pizza-Shop-React/issues"
+  },
+  "homepage": "https://github.com/nazariimrochko/Pizza-Shop-React#readme"
 }

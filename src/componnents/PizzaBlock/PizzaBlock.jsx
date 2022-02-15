@@ -69,7 +69,7 @@ const PizzaBlock = ({id, name, price, imageUrl, types, sizes, onClickAddPizza,am
                             fill="white"
                         />
                     </svg>
-                    <span>Добавити</span>
+                    <span>Додати</span>
                     { amountAded && <i>{amountAded}</i>}
                 </button>
             </div>
